@@ -5,7 +5,7 @@
 /** 
 *   return the nearest higher power of 2
 **/   
-size_t get_new_size(size_t size)
+static size_t get_new_size(size_t size)
 {
     size_t result = 2;
     while (result<=size)
@@ -19,7 +19,11 @@ size_t get_new_size(size_t size)
 struct String* init_string(void)
 {
     struct String* string = calloc(1,sizeof(struct String));
+    if (! string)
+        return NULL;
     string -> data = calloc(1, sizeof(char)); // \0 only never null
+    if (! string -> data)
+        return NULL;
     string -> capacity = 1;
     return string;
 }
@@ -32,9 +36,13 @@ struct String* init_string_from_str(char* str)
     if(!str)
         return NULL;
     struct String* string = calloc(1,sizeof(struct String));
+    if (! string)
+        return NULL;
     string -> size = strlen(str);
     string -> capacity = get_new_size(strlen(str));
     string -> data = calloc(string->capacity, sizeof(char));
+    if (! string -> data)
+        return NULL;
     string -> data = strcpy(string -> data, str);
     return string;
 }
