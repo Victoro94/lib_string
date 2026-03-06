@@ -4,7 +4,7 @@ LDFLAGS=-g -fsanitize=address
 LDLIBS=-lcriterion
 EXE=main debug ../tests/testsuite
 
-SRCS=string/basic_string.c
+SRCS=string/basic_string.c string/easy_string.c
 OBJS=$(SRCS:.c=.o)
 
 TEST_SRCS=../tests/test_basic_string.c
@@ -24,6 +24,7 @@ debug: $(OBJS)
 	@./debug
 
 check: test
+	@echo "launching testsuite:"
 	@../tests/testsuite
 
 test: $(OBJS) $(TEST_OBJS)
@@ -33,4 +34,9 @@ test: $(OBJS) $(TEST_OBJS)
 .PHONY: clean
 
 clean:
-	$(RM) $(OBJS) $(TEST_OBJS) $(EXE) 
+	@echo "removing objects:"
+	$(RM) $(OBJS) 
+	@echo "\nremoving tests objects:"
+	$(RM) $(TEST_OBJS) 
+	@echo "\nremoving executables:"
+	$(RM) $(EXE) 

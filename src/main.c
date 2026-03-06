@@ -4,13 +4,13 @@
 
 int main(void)
 {
-    struct String* string = init_string();    
-    printf("struct String :%s\n",string->data);
+    String* string = init_string();    
+    debug_string(string);
     free_string(string);
 
 
-    struct String* str = init_string_from_str("test string");    
-    printf("struct String :%s\n",str->data);
-    free_string(str);
+    string = init_string_from_str("test string");    
+    debug_string(string);
+    free_string(string);
     return 0;
 }

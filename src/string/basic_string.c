@@ -1,6 +1,7 @@
 #include "string.h"
 #include <string.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 /** 
 *   return the nearest higher power of 2
@@ -16,9 +17,9 @@ static size_t get_new_size(size_t size)
 /**
 *   init a struct String from nothing
 **/
-struct String* init_string(void)
+String* init_string(void)
 {
-    struct String* string = calloc(1,sizeof(struct String));
+    String* string = calloc(1,sizeof(String));
     if (! string)
         return NULL;
     string -> data = calloc(1, sizeof(char)); // \0 only never null
@@ -31,11 +32,11 @@ struct String* init_string(void)
 /** 
 *   init a struct String from a char*
 **/ 
-struct String* init_string_from_str(char* str)
+String* init_string_from_str(char* str)
 {
     if(!str)
         return NULL;
-    struct String* string = calloc(1,sizeof(struct String));
+    String* string = calloc(1,sizeof(String));
     if (! string)
         return NULL;
     string -> size = strlen(str);
@@ -49,9 +50,39 @@ struct String* init_string_from_str(char* str)
 
 
 /**
+*   display the string on stdout
+**/
+void display_string(String* string)
+{
+    if (!string)
+        return;
+    if (string->size == 0)
+        printf("(empty string)");
+    else 
+        printf("%s",string-> data);
+    fflush(stdout);
+}
+
+/**
+*   print all the information on stdout
+**/
+void debug_string(String* string)
+{   
+    if (string)
+    {
+        printf("String : \"");
+        display_string(string);
+        printf("\"\n");
+        printf("size: %lu\n",string -> size);
+        printf("capacity: %lu\n",string -> capacity);
+    }
+    else
+        printf("(null)\n");
+}
+/**
 *   free the struct string
 **/
-void free_string(struct String* string)
+void free_string(String* string)
 {
     if (!string)
         return;
