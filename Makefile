@@ -14,13 +14,13 @@ debug:
 test:
 	@echo "making test"
 	@echo ""
-	@make --no-print-directory -C src test
+	@make --no-print-directory -C tests test
 
 
 check:
 	@echo "testing"
 	@echo ""
-	@make --no-print-directory -C src check
+	@make --no-print-directory -C tests check
 
 .PHONY: clean
 
@@ -28,3 +28,5 @@ clean:
 	@echo "cleaning"
 	@echo ""
 	@make --no-print-directory -C src clean
+	@echo ""
+	@make --no-print-directory -C tests clean

@@ -3,17 +3,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-/** 
-*   return the nearest higher power of 2
-**/   
-static size_t get_new_size(size_t size)
-{
-    size_t result = 2;
-    while (result<=size)
-        result*=2;
-    return result;
-}
-
 /**
 *   init a struct String from nothing
 **/
@@ -31,16 +20,17 @@ String* init_string(void)
 
 /** 
 *   init a struct String from a char*
+*   if str is NULL the call is equivalent to init_string();
 **/ 
 String* init_string_from_str(char* str)
 {
     if(!str)
-        return NULL;
+        return init_string();
     String* string = calloc(1,sizeof(String));
     if (! string)
         return NULL;
     string -> size = strlen(str);
-    string -> capacity = get_new_size(strlen(str));
+    string -> capacity = strlen(str)+1;
     string -> data = calloc(string->capacity, sizeof(char));
     if (! string -> data)
         return NULL;
@@ -48,6 +38,17 @@ String* init_string_from_str(char* str)
     return string;
 }
 
+/**
+*   reset the string given (equivalent of free_string and init_string())
+**/
+String* reset_string(String* string)
+{
+    string -> size = 0;
+    string -> capacity = 1;
+    string -> data = realloc(string -> data, 1 * sizeof(char));
+    string -> data[0] = '\0';
+    return string;
+}
 
 /**
 *   display the string on stdout
@@ -79,6 +80,7 @@ void debug_string(String* string)
     else
         printf("(null)\n");
 }
+
 /**
 *   free the struct string
 **/
