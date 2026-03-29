@@ -1,0 +1,31 @@
+name: CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install Clang-Format
+        run: sudo apt-get update && sudo apt-get install -y clang-format
+
+      - name: Format checking
+        run: |
+          clang-format -style=file -output-replacements-xml $(find . -name "*.c" -o -name "*.h") | grep "<replacement " && exit 1 || echo "Formatting OK"
+
+      - name: Build
+        run: make
+
+      - name: Tests
+        run: make check
+        
+      - name: Cleaning 
+        run: make clean
