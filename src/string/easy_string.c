@@ -55,7 +55,7 @@ int cmpn_string_with_str(String* string, char* str, size_t n)
         return 0;
     if (!string)
         return -(str[0]);
-    if (!string)
+    if (!str)
         return string -> data[0];
     return strncmp(string -> data, str, n);
 }
