@@ -31,6 +31,3 @@ jobs:
         
       - name: Cleaning 
         run: make clean
-
-      - name: docs 
-        run: doxygen Doxyfile
