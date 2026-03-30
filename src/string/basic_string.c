@@ -5,7 +5,12 @@
 #include "string.h"
 
 /**
- *   init a struct String from nothing
+ *   @brief init a struct String and return it.
+ *   @param void the function take no parameter.
+ *   @details the function create a new struct string with an allocated data of
+ *   size 1. sets size to 0 and capacity to 1.
+ *   @return String*
+ *   @see String for more information.
  **/
 String *init_string(void)
 {

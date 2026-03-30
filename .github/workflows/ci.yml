@@ -20,6 +20,9 @@ jobs:
       - name: Install Clang-Format
         run: sudo apt-get update && sudo apt-get install -y clang-format
 
+      - name: Install Doxygen
+        run: sudo apt-get update && sudo apt-get install -y doxygen graphviz
+
       - name: Format checking
         run: ./clang-format check
           
@@ -31,3 +34,12 @@ jobs:
         
       - name: Cleaning 
         run: make clean
+
+      - name: docs 
+        run: doxygen Doxyfile
+
+      - name: Deploy docs to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: docs/html

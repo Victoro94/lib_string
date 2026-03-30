@@ -1,5 +1,5 @@
 
-
+SRCS=src/string/*
 all:
 	@echo "making all"
 	@echo ""
@@ -22,7 +22,11 @@ check:
 	@echo ""
 	@make --no-print-directory -C tests check
 
-.PHONY: clean
+docs:  Doxyfile
+	@rm -rf docs/html docs/latex
+	@doxygen Doxyfile
+
+.PHONY: clean docs
 
 clean:
 	@echo "cleaning"
@@ -30,3 +34,4 @@ clean:
 	@make --no-print-directory -C src clean
 	@echo ""
 	@make --no-print-directory -C tests clean
+	@rm -rf docs/html docs/latex

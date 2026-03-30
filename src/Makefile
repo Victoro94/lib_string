@@ -12,7 +12,6 @@ all: $(OBJS)
 	$(CC) -o main $^ main.c
 	@echo "\nmain done\n"
 	@echo "running main\n==================="
-	@./main
 
 debug:CFLAGS+= $(LDFLAGS)
 debug: $(OBJS)
