@@ -23,7 +23,7 @@ check:
 	@make --no-print-directory -C tests check
 
 docs:  Doxyfile
-	@rm -rf docs/html docs/latex
+	@rm -rf docs/*
 	@doxygen Doxyfile
 
 .PHONY: clean docs
@@ -34,4 +34,4 @@ clean:
 	@make --no-print-directory -C src clean
 	@echo ""
 	@make --no-print-directory -C tests clean
-	@rm -rf docs/html docs/latex
+	@rm -rf docs/*
