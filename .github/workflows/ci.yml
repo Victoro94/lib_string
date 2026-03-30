@@ -13,6 +13,9 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        
+      - name: Install Criterion
+        run: sudo apt update && sudo apt install -y libcriterion-dev
 
       - name: Install Clang-Format
         run: sudo apt-get update && sudo apt-get install -y clang-format
