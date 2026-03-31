@@ -21,7 +21,7 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y clang-format
 
       - name: Format checking
-        run: ./clang-format check
+        run: ./clang-format.sh check
           
       - name: Build
         run: make
