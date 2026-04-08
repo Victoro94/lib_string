@@ -1,5 +1,3 @@
-
-SRCS=src/string/*
 all:
 	@echo "making all"
 	@echo ""
@@ -35,3 +33,4 @@ clean:
 	@echo ""
 	@make --no-print-directory -C tests clean
 	@rm -rf docs/*
+	@echo "\ncleaning done"

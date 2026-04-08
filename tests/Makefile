@@ -4,10 +4,20 @@ LDFLAGS=-g -fsanitize=address
 LDLIBS=-lcriterion
 EXE=testsuite
 
-SRCS=../src/string/basic_string.c ../src/string/easy_string.c
+SRCS=\
+../src/string/init_string.c \
+../src/string/data_string.c \
+../src/string/print_string.c \
+../src/string/cmp_string.c \
+../src/string/dup_string.c
+
 OBJS=$(SRCS:.c=.o)
 
-TEST_SRCS=test_basic_string.c test_easy_string.c
+TEST_SRCS= \
+test_cmp_string.c \
+test_init_string.c \
+test_dup_string.c 
+
 TEST_OBJS=$(TEST_SRCS:.c=.o)
 
 

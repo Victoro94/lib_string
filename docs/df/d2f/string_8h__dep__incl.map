@@ -1,9 +1,15 @@
 <map id="src/string/string.h" name="src/string/string.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="139,5,273,31"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="427,5,561,31"/>
 <area shape="rect" id="Node000002" href="$d0/d29/main_8c.html" title=" " alt="" coords="5,79,95,104"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="170,39,77,81,74,76,167,34"/>
-<area shape="rect" id="Node000003" href="$d9/d0d/basic__string_8c.html" title=" " alt="" coords="119,79,293,104"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="209,44,209,79,203,79,203,44"/>
-<area shape="rect" id="Node000004" href="$d5/dbd/easy__string_8c.html" title=" " alt="" coords="317,79,489,104"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="251,33,372,76,370,81,250,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="413,33,106,81,96,83,95,78,106,76,412,28"/>
+<area shape="rect" id="Node000003" href="$d1/d21/cmp__string_8c.html" title=" " alt="" coords="119,79,288,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="435,37,251,81,250,76,433,31"/>
+<area shape="rect" id="Node000004" href="$d9/db1/data__string_8c.html" title=" " alt="" coords="313,79,483,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="469,41,415,81,412,76,466,37"/>
+<area shape="rect" id="Node000005" href="$d6/d41/dup__string_8c.html" title=" " alt="" coords="507,79,673,104"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="522,37,576,76,573,81,519,41"/>
+<area shape="rect" id="Node000006" href="$d2/dc4/init__string_8c.html" title=" " alt="" coords="697,79,859,104"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="553,31,733,76,731,81,552,37"/>
+<area shape="rect" id="Node000007" href="$d6/d93/print__string_8c.html" title=" " alt="" coords="883,79,1054,104"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="575,29,893,76,892,81,574,34"/>
 </map>

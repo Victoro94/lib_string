@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['main_2ec_0',['main.c',['../d0/d29/main_8c.html',1,'']]]
+  ['init_5fstring_2ec_0',['init_string.c',['../d2/dc4/init__string_8c.html',1,'']]]
 ];
