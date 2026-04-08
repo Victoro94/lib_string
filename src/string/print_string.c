@@ -1,6 +1,6 @@
-#include "string.h"
-
 #include <stdio.h>
+
+#include "string.h"
 
 /**
  *   @brief Display the string on stdout.
@@ -21,8 +21,8 @@ void display_string(String *string)
 
 /**
  *   @brief Display all the information on stdout.
- *   @details Display the given string on stdout in a debug form. \n 
- *   Displays the content, size and capacity. 
+ *   @details Display the given string on stdout in a debug form. \n
+ *   Displays the content, size and capacity.
  *   @return void This function returns nothing.
  *   @param String * The string which will be displayed.
  **/

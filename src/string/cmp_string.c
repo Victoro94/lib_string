@@ -1,6 +1,6 @@
-#include "string.h"
-
 #include <string.h>
+
+#include "string.h"
 
 /**
  *   compare the two given strings

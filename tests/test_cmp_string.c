@@ -1,7 +1,7 @@
-#include "../src/string/string.h"
-
 #include <criterion/criterion.h>
 #include <criterion/new/assert.h>
+
+#include "../src/string/string.h"
 
 TestSuite(cmp_string);
 TestSuite(cmp_string_with_str);

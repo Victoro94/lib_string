@@ -1,7 +1,7 @@
-#include "string.h"
-
 #include <stdlib.h>
 #include <string.h>
+
+#include "string.h"
 
 /**
  *   @brief Init a struct String and return it.
@@ -26,8 +26,8 @@ String *init_string(void)
 /**
  *   @brief Init a struct String from a char * and return it.
  *   @param char * The str to init with.
- *   @details If the param str is NULL, the call is equivalent to init_string().\n 
- *   Sets the size to strlen(str) and capacity to size + 1.
+ *   @details If the param str is NULL, the call is equivalent to
+ *init_string().\n Sets the size to strlen(str) and capacity to size + 1.
  *   @see Check on String implementation for more information.
  **/
 String *init_string_from_str(char *str)
@@ -48,7 +48,7 @@ String *init_string_from_str(char *str)
 
 /**
  *   @brief Reset the string given.
- *   @details Set the size to 0, the capacity to 1 and data is reallocated.\n \n 
+ *   @details Set the size to 0, the capacity to 1 and data is reallocated.\n \n
  *   The call is equivalent of free_string and init_string().
  *   @return String * The reseted String.
  **/
