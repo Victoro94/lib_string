@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['lib_5fstring_0',['lib_string',['../index.html',1,'']]]
+  ['documentation_0',['lib_string documentation',['../index.html',1,'']]]
 ];

@@ -6,7 +6,7 @@ var indexSectionsWithContent =
   3: "cdfimrs",
   4: "cds",
   5: "s",
-  6: "l"
+  6: "dl"
 };
 
 var indexSectionNames =
