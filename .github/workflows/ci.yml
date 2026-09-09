@@ -58,9 +58,12 @@ jobs:
   deploy:
     needs: [ ci, changes ]
     if: >
-      needs.changes.outputs.docs == 'true' &&
-      (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
+      github.event_name == 'workflow_dispatch' ||
+      (github.event_name == 'push' && needs.changes.outputs.docs == 'true')
     runs-on: ubuntu-latest
+    concurrency:
+      group: pages-deploy
+      cancel-in-progress: true
 
     steps:
       - name: Checkout code
@@ -79,3 +82,4 @@ jobs:
           publish_dir: ./docs
           publish_branch: gh-pages
           force_orphan: true
+          enable_jekyll: false
