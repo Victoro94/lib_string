@@ -52,8 +52,11 @@ jobs:
             docs:
               - 'src/**'
               - 'Doxyfile'
+              - 'DoxygenLayout.xml'
               - 'Docs.md'
               - 'README.md'
+              - 'Makefile'
+              - 'docs-theme/**'
 
   deploy:
     needs: [ ci, changes ]
