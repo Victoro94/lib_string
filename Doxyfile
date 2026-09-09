@@ -54,7 +54,7 @@ PROJECT_NUMBER         =
 # for a project that appears at the top of each page and should give viewer a
 # quick idea about the purpose of the project. Keep the description short.
 
-PROJECT_BRIEF          =
+PROJECT_BRIEF          = "A high-level String type for C"
 
 # With the PROJECT_LOGO tag one can specify a logo or an icon that is included
 # in the documentation. The maximum height of the logo should not exceed 55
@@ -745,7 +745,6 @@ EXTENSION_MAPPING      =
     # The GENERATE_BUGLIST tag can be used to enable (YES) or disable (NO) the bug
     # list. This list is created by putting \bug commands in the documentation.
     # The default value is: YES.
-    docs
     GENERATE_BUGLIST       = YES
 
     # The GENERATE_DEPRECATEDLIST tag can be used to enable (YES) or disable (NO)
@@ -815,7 +814,7 @@ EXTENSION_MAPPING      =
     # DoxygenLayout.xml, doxygen will parse it automatically even if the LAYOUT_FILE
     # tag is left empty.
 
-    LAYOUT_FILE            =
+    LAYOUT_FILE            = DoxygenLayout.xml
 
     # The CITE_BIB_FILES tag can be used to specify one or more bib files containing
     # the reference definitions. This must be a list of .bib files. The .bib
@@ -1397,7 +1396,7 @@ HTML_STYLESHEET        =
 # documentation.
 # This tag requires that the tag GENERATE_HTML is set to YES.
 
-HTML_EXTRA_STYLESHEET  =
+HTML_EXTRA_STYLESHEET  = docs-theme/doxygen-awesome.css
 
 # The HTML_EXTRA_FILES tag can be used to specify one or more extra images or
 # other source files which should be copied to the HTML output directory. Note
@@ -1420,7 +1419,7 @@ HTML_EXTRA_FILES       =
 # The default value is: AUTO_LIGHT.
 # This tag requires that the tag GENERATE_HTML is set to YES.
 
-HTML_COLORSTYLE        = AUTO_LIGHT
+HTML_COLORSTYLE        = TOGGLE
 
 # The HTML_COLORSTYLE_HUE tag controls the color of the HTML output. Doxygen
 # will adjust the colors in the style sheet and background images according to
@@ -1728,7 +1727,7 @@ DISABLE_INDEX          = NO
 # The default value is: NO.
 # This tag requires that the tag GENERATE_HTML is set to YES.
 
-GENERATE_TREEVIEW      = NO
+GENERATE_TREEVIEW      = YES
 
 # When both GENERATE_TREEVIEW and DISABLE_INDEX are set to YES, then the
 # FULL_SIDEBAR option determines if the side bar is limited to only the treeview
