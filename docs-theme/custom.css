@@ -1,0 +1,6 @@
+#main-nav a[href="globals_type.html"],
+#main-nav a[href="globals_defs.html"],
+.navtree a[href="globals_type.html"],
+.navtree a[href="globals_defs.html"] {
+    display: none !important;
+}
