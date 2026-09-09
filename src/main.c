@@ -4,12 +4,12 @@
 
 int main(void)
 {
-    String *string = init_string();
-    debug_string(string);
-    free_string(string);
+    String *string = string_init();
+    string_debug(string);
+    string_free(string);
 
-    string = init_string_from_str("test string");
-    debug_string(string);
-    free_string(string);
+    string = string_from_cstr("test string");
+    string_debug(string);
+    string_free(string);
     return 0;
 }

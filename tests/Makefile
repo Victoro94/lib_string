@@ -5,26 +5,25 @@ LDLIBS=-lcriterion
 EXE=testsuite
 
 SRCS=\
-../src/string/init_string.c \
-../src/string/data_string.c \
-../src/string/print_string.c \
-../src/string/cmp_string.c \
-../src/string/dup_string.c
+../src/string/string_init.c \
+../src/string/string_data.c \
+../src/string/string_io.c \
+../src/string/string_cmp.c \
+../src/string/string_dup.c
 
 OBJS=$(SRCS:.c=.o)
 
 TEST_SRCS= \
-test_cmp_string.c \
-test_init_string.c \
-test_dup_string.c 
+test_string_init.c \
+test_string_cmp.c \
+test_string_dup.c \
+test_string_data.c
 
 TEST_OBJS=$(TEST_SRCS:.c=.o)
-
 
 check: test
 	@echo "launching testsuite:"
 	@./testsuite
-
 
 test:CFLAGS+= $(LDFLAGS)
 test: $(OBJS) $(TEST_OBJS)
@@ -33,7 +32,7 @@ test: $(OBJS) $(TEST_OBJS)
 .PHONY: clean
 
 clean:
-	@echo "renoving tests objects:"
+	@echo "removing tests objects:"
 	$(RM) $(TEST_OBJS)
 	@echo "\nremoving testsuite:"
 	$(RM) $(EXE)

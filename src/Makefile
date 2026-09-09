@@ -1,19 +1,17 @@
 CC=gcc
 CFLAGS=-Wall -Wextra -Werror -Wvla
 LDFLAGS=-g -fsanitize=address
-LDLIBS=-lcriterion
 EXE=main debug
 
 SRCS=\
-string/init_string.c \
-string/data_string.c \
-string/print_string.c \
-string/cmp_string.c \
-string/dup_string.c
+string/string_init.c \
+string/string_data.c \
+string/string_io.c \
+string/string_cmp.c \
+string/string_dup.c
 
 OBJS=$(SRCS:.c=.o)
 lib=string/libstring.a
-
 
 all: $(OBJS)
 	$(CC) -o main $^ main.c
@@ -33,4 +31,4 @@ clean:
 	@echo "\nremoving libraries:"
 	$(RM) $(lib)
 	@echo "\nremoving executables:"
-	$(RM) $(EXE) 
+	$(RM) $(EXE)

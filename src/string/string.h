@@ -9,24 +9,27 @@ typedef struct String
     size_t capacity;
 } String;
 
-//  init_string.c
-String *init_string();
-String *init_string_from_str(char *str);
-String *reset_string(String *string);
-void free_string(String *string);
+// string_init.c
+String *string_init(void);
+String *string_from_cstr(const char *str);
+String *string_reset(String *string);
+void string_free(String *string);
 
-//  print_string.c
-void display_string(String *string);
-void debug_string(String *string);
+// string_data.c
+size_t string_len(const String *string);
 
-//  cmp_string.c
-int cmp_string(String *string1, String *string2);
-int cmp_string_with_str(String *string1, char *str);
-int cmpn_string(String *string1, String *string2, size_t size);
-int cmpn_string_with_str(String *string1, char *str, size_t size);
+// string_io.c
+void string_display(const String *string);
+void string_debug(const String *string);
 
-//  dup_string.c
-String *dup_string(String *string);
-String *dupn_string(String *string, size_t n);
+// string_cmp.c
+int string_cmp(const String *string1, const String *string2);
+int string_cmp_cstr(const String *string, const char *str);
+int string_ncmp(const String *string1, const String *string2, size_t n);
+int string_ncmp_cstr(const String *string, const char *str, size_t n);
+
+// string_dup.c
+String *string_dup(const String *string);
+String *string_ndup(const String *string, size_t n);
 
 #endif /* ! STRING_H */
