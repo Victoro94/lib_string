@@ -23,23 +23,14 @@ string_free(s);
 
 ## API
 
-| Category    | Functions                                       |
-|-------------|-------------------------------------------------|
-| Lifecycle   | `string_init` `string_from_cstr` `string_reset` `string_free` |
-| Accessors   | `string_len`                                    |
-| Display     | `string_display` `string_debug`                 |
-| Compare     | `string_cmp` `string_cmp_cstr` `string_ncmp` `string_ncmp_cstr` |
-| Duplicate   | `string_dup` `string_ndup`                      |
+| Category    | Functions                                        |
+|-------------|--------------------------------------------------|
+| Lifecycle   | `string_init`, `string_from_cstr`, `string_reset`, `string_free` |
+| Accessors   | `string_len`                                     |
+| Display     | `string_display`, `string_debug`                 |
+| Compare     | `string_cmp`, `string_cmp_cstr`, `string_ncmp`, `string_ncmp_cstr` |
+| Duplicate   | `string_dup`, `string_ndup`                      |
 
-- [all defined functions](globals_func.html)
-
-## Build & test
-
-```bash
-make        # build the library and the demo
-make check  # build and run the test suite
-```
-
-## License
-
-MIT © 2026 Victor Tang
+### Navigation
+- [All functions](globals_func.html)
+- [File list](files.html)
