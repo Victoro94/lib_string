@@ -21,6 +21,7 @@ check:
 	@make --no-print-directory -C tests check
 
 docs:  Doxyfile
+	@mkdir -p docs
 	@rm -rf docs/*
 	@doxygen Doxyfile
 
@@ -32,5 +33,4 @@ clean:
 	@make --no-print-directory -C src clean
 	@echo ""
 	@make --no-print-directory -C tests clean
-	@rm -rf docs/*
 	@echo "\ncleaning done"

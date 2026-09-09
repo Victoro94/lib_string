@@ -5,6 +5,10 @@ on:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   ci:
@@ -13,7 +17,7 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-        
+
       - name: Install Criterion
         run: sudo apt update && sudo apt install -y libcriterion-dev
 
@@ -22,12 +26,56 @@ jobs:
 
       - name: Format checking
         run: ./clang-format.sh check
-          
+
       - name: Build
         run: make
 
       - name: Tests
         run: make check
-        
-      - name: Cleaning 
+
+      - name: Cleaning
         run: make clean
+
+  changes:
+    runs-on: ubuntu-latest
+    outputs:
+      docs: ${{ steps.filter.outputs.docs }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Filter changed files
+        id: filter
+        uses: dorny/paths-filter@v3
+        with:
+          filters: |
+            docs:
+              - 'src/**'
+              - 'Doxyfile'
+              - 'Docs.md'
+              - 'README.md'
+
+  deploy:
+    needs: [ ci, changes ]
+    if: >
+      needs.changes.outputs.docs == 'true' &&
+      (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install Doxygen
+        run: sudo apt update && sudo apt install -y doxygen
+
+      - name: Generate docs
+        run: make docs
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs
+          publish_branch: gh-pages
+          force_orphan: true
