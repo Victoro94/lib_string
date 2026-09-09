@@ -125,8 +125,6 @@
       <namespaces visible="yes" title=""/>
       <concepts visible="yes" title=""/>
       <constantgroups visible="yes" title=""/>
-      <defines title=""/>
-      <typedefs title=""/>
       <sequences title=""/>
       <dictionaries title=""/>
       <enums title=""/>
@@ -137,8 +135,6 @@
     <detaileddescription title=""/>
     <memberdef>
       <inlineclasses title=""/>
-      <defines title=""/>
-      <typedefs title=""/>
       <sequences title=""/>
       <dictionaries title=""/>
       <enums title=""/>

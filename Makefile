@@ -24,6 +24,9 @@ docs:  Doxyfile
 	@mkdir -p docs
 	@rm -rf docs/*
 	@doxygen Doxyfile
+	@sed -i '/{text:"Macros",url:"globals_defs.html"}/d;/{text:"Typedefs",url:"globals_type.html"}/d' docs/menudata.js
+	@sed -i '/\[ "Macros", "globals_defs.html", null \]/d;/\[ "Typedefs", "globals_type.html", null \]/d' docs/navtreedata.js
+	@rm -f docs/globals_defs.html docs/globals_type.html
 
 .PHONY: clean docs
 
